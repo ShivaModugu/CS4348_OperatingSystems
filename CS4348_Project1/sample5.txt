@@ -1,0 +1,216 @@
+23   // line one
+48   
+23   // line two 
+61   
+23   // line three 
+84   
+23   // line four 
+107  
+23   // line five 
+124  
+23   // line six 
+151  
+23   // line seven 
+182  
+50
+1    ld 1   // print underscore 
+1 
+14   CopyToX
+6    LoadSpX  - get parm
+14   CopyToX
+1    ld _
+95
+9    output
+2
+26   decX
+15   CopyFromX
+22   JNE to load
+20
+24
+1    ld 1   // print space 
+1 
+14   CopyToX
+6    LoadSpX  - get parm
+14   CopyToX
+1    ld ' ' 
+32
+9    output
+2
+26   decX
+15   CopyFromX
+22   JNE to load
+34
+24
+1           // print newline 
+10
+9
+2
+24
+1    ld 3 spaces    // ####### line one
+3         
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld _
+95
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld 2 spaces    // ####### line two
+2      
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld /
+47
+9    output
+2
+1    ld 1 space
+1   
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld \
+92
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld 1 space     // ####### line three
+1     
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld /
+47
+9    output
+2
+1    ld 3 spaces
+3
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld \
+92
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld /           // ####### line four
+47   
+9    output
+2
+1    ld 5 underscores
+5
+27   push
+23   call underscores 
+15   
+28   remove parm 
+1    ld \
+92
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld |           // ####### line five
+124   
+9    output
+2
+1    ld 2 spaces
+2
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld _
+95
+9    output
+2
+1    ld 2 spaces
+2
+27   push
+23   call spaces 
+29
+28   remove parm 
+1    ld | 
+124   
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld |           // ####### line six
+124   
+9    output
+2
+1    ld ' ' 
+32
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+1    ld ' ' 
+32
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+1    ld ' ' 
+32
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+23   call newline 
+43
+24   return
+1    ld |           // ####### line seven
+124   
+9    output
+2
+1    ld _ 
+95
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+1    ld _ 
+95
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+1    ld _ 
+95
+9    output
+2
+1    ld |           
+124   
+9    output
+2
+23   call newline 
+43
+24   return
+
+.1000
+30   interrupt handler - just return
